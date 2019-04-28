@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import logo from '../assets/logo.png';
 import search from '../assets/search.jpg';
+import {NavLink} from 'react-router-dom';
+import '../styles/nav.css';
 
 const NavBar = styled.div`
     height: 75px;
@@ -37,11 +39,11 @@ const Nav = props => {
     return(
         <NavBar>
             <Logo src={logo} />
-            <NavItems>
-                <li>Home</li>
-                <li>Login</li>
-                <li>Features</li>
-                <li>Sign Up</li>
+            <NavItems className="navbar">
+                <li activeClassName="active">Home</li>
+                <li activeClassName="active">Login</li>
+                <li activeClassName="active">Features</li>
+                <li activeClassName="active"><NavLink to="/signup">Sign Up</NavLink></li>
                 <li><SearchIcon src={search} /></li>
             </NavItems>
         </NavBar>

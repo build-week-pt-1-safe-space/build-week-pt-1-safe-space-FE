@@ -10,7 +10,7 @@ export const FormInput = styled.input`
     border: 1px solid #8492A6;
     border-radius: 5px;
     height: 45px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding-left: 10px;
 `
 

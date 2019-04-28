@@ -19,6 +19,7 @@ const NavItems = styled.ul`
     list-style: none;
     align-items: center;
     font-size: 18px;
+    padding-top: 15px;
 `
 
 const Logo = styled.img `

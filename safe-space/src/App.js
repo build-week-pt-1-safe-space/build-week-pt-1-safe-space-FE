@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from './components/Nav';
 import SignUpView from './views/SignUpView';
 import {Route} from 'react-router-dom';
-
+import Login from './components/Login';
 
 import './App.css';
 

@@ -14,7 +14,7 @@ const NavBar = styled.div`
 `
 
 const NavItems = styled.ul`
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -41,8 +41,9 @@ const Nav = props => {
             <Logo src={logo} />
             <NavItems className="navbar">
                 <li activeClassName="active">Home</li>
-                <li activeClassName="active">Login</li>
+                <li activeClassName="active"><NavLink to="/login">Login</NavLink></li>
                 <li activeClassName="active">Features</li>
+                <li activeClassName="active">Contact Us</li>
                 <li activeClassName="active"><NavLink to="/signup">Sign Up</NavLink></li>
                 <li><SearchIcon src={search} /></li>
             </NavItems>

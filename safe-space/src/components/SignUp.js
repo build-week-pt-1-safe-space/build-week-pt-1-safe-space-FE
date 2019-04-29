@@ -38,10 +38,6 @@ const FormHeading = styled.h2`
     padding-top: 30px;
 `
 
-// const PhoneNumberInput = styled(FormInput)`
-//     width: 300px;
-//     margin-top: 40px;
-// `
 
 const FormContainer = styled.div`
     display: flex;

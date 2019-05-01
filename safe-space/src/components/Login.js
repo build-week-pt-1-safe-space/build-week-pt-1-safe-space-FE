@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 import '../styles/shared';
 
@@ -26,6 +27,8 @@ const SignInText = styled.p`
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     font-weight: bold;
+    text-decoration: none;
+    color: #47525E;
 `
 
 const SignInForm = styled.form`
@@ -75,7 +78,7 @@ class Login extends React.Component{
                 </SignInForm>
                 <SignInText>Forgot your password?</SignInText>
                 <NeedSignUp>Don't Have An Account?</NeedSignUp>
-                <SignInText>Sign Up Here</SignInText>
+                <Link to="/signup"><SignInText>Sign Up Here</SignInText></Link>
             </LoginContainer>
         )
     }

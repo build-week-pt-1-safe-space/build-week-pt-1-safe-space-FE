@@ -1,8 +1,8 @@
 import React from 'react';
 import Nav from './components/Nav';
 import SignUpView from './views/SignUpView';
+import LoginView from './views/LoginView'
 import {Route} from 'react-router-dom';
-import Login from './components/Login';
 
 import './App.css';
 
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Nav/>
       <Route path="/signup" component={SignUpView} />
-      <Route path="/login" component={Login} />
+      <Route path="/login" component={LoginView} />
     </div>
   );
 }

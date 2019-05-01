@@ -36,13 +36,20 @@ const SearchIcon = styled.img`
 `
 
 const Nav = props => {
+
+    const NavToggle = props.isLoggedIn === false 
+        ?  
+            <><li activeClassName="active"><NavLink to="/login">Login</NavLink></li>
+            <li activeClassName="active"><NavLink to="/signup">Sign Up</NavLink></li></>
+        :
+            <>Log Out</>
+
     return(
         <NavBar>
             <Logo src={logo} />
             <NavItems className="navbar">
                 <li activeClassName="active">Home</li>
-                <li activeClassName="active"><NavLink to="/login">Login</NavLink></li>
-                <li activeClassName="active"><NavLink to="/signup">Sign Up</NavLink></li>
+                {NavToggle}
                 <li><SearchIcon src={search} /></li>
             </NavItems>
         </NavBar>

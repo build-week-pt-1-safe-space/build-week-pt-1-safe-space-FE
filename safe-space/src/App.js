@@ -1,15 +1,16 @@
-import React from 'react';
-import Nav from './components/Nav';
-import SignUpView from './views/SignUpView';
-import LoginView from './views/LoginView'
-import {Route} from 'react-router-dom';
+import React from "react";
+import Nav from "./Components/Nav";
+import SignUpView from "./Views/SignUpView";
+import LoginView from "./Views/LoginView";
+import { Route } from "react-router-dom";
+// import { BrowserRouter as Router, Link } from "react-router-dom";
 
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Nav/>
+      <Nav />
       <Route path="/signup" component={SignUpView} />
       <Route path="/login" component={LoginView} />
     </div>

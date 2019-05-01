@@ -1,10 +1,8 @@
-import React from 'react';
-import SignUp from '../components/SignUp';
+import React from "react";
+import SignUp from "../Components/SignUp";
 
 const SignUpView = props => {
-    return(
-        <SignUp />
-    )
-}
+  return <SignUp />;
+};
 
 export default SignUpView;

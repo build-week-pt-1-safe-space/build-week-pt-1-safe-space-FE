@@ -114,7 +114,7 @@ class SignUp extends React.Component {
               type="password"
             />
           </FormContainer>
-          <Button>Sign Up</Button>
+          <Button type="submit">Sign Up</Button>
         </SignUpForm>
       </SignUpContainer>
     );

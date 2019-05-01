@@ -21,6 +21,7 @@ class App extends React.Component {
         )} />
       <Route path="/signup" component={SignUpView} />
       <Route path="/login" component={LoginView} />
+      <Route path="/dashboard" component={Dashboard} />
       <Footer />
     </div>
   )}

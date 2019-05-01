@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { login } from "../Actions";
+import { login } from "../actions";
 
 import "../styles/shared";
 

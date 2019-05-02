@@ -17,15 +17,26 @@ const Icon = styled.img`
     height: 44px;
     width: 44px;
     cursor: pointer;
+    
+    @media(max-width: 500px){
+        width: 35px;
+        height: 35px;
+    }
 `
 
 const MessageText = styled.div`
     background-color: #13CE66;
     width: 90%;
-    height: 95px;
+    min-height: 95px;
     margin-left: 20px;
     font-size: 25px;
     padding: 10px;
+
+    @media(max-width: 500px){
+        margin-left: 10px;
+        min-height: 75px;
+        font-size: 18px;
+    }
 `
 
 class Message extends React.Component{

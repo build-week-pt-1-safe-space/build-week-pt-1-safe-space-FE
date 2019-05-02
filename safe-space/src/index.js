@@ -6,11 +6,11 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 // import axios from "axios";
-// import logger from "logger";
+import { logger } from "./logger";
 import { BrowserRouter as Router } from "react-router-dom";
-import rootReducer from "./Reducers";
+import rootReducer from "./reducers";
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(

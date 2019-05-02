@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { connect } from "react-redux";
+import React from "./node_modules/react";
+import styled from "./node_modules/styled-components";
+import { connect } from "./node_modules/react-redux";
 import { signup } from "../actions";
 
 import { BlueText, FormInput, Button } from "../styles/shared";
@@ -16,7 +16,7 @@ const MainHeading = styled.h1`
   padding-top: 20px;
   text-align: center;
 
-  @media(max-width: 500px){
+  @media (max-width: 500px) {
     font-size: 40px;
     padding-top: 10px;
   }
@@ -38,12 +38,12 @@ const SignUpForm = styled.form`
   width: 60%;
   padding-bottom: 25px;
 
-  @media(max-width:800px){
+  @media (max-width: 800px) {
     padding-bottom: 35px;
     width: 70%;
   }
 
-  @media(max-width: 500px){
+  @media (max-width: 500px) {
     width: 80%;
   }
 `;
@@ -53,7 +53,7 @@ const FormHeading = styled.h2`
   text-align: center;
   padding-top: 30px;
 
-  @media(max-width: 800px){
+  @media (max-width: 800px) {
     padding-top: 20px;
     font-size: 30px;
   }

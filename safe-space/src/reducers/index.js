@@ -17,7 +17,7 @@ import {
   DELETING_START,
   DELETED_SUCCESS,
   DELETING_FAIL
-} from "../actions";
+} from "../Actions";
 
 const initialState = {
   name: "",

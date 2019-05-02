@@ -1,7 +1,7 @@
-import React from 'react';
+import React from './node_modules/react';
 import Delete from '../assets/delete.png';
 import Edit from '../assets/edit.png';
-import styled from 'styled-components';
+import styled from './node_modules/styled-components';
 
 const MessageContainer = styled.div`
     display: flex;

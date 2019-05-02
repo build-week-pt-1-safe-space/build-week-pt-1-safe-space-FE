@@ -1,6 +1,6 @@
-import React from 'react';
+import React from './node_modules/react';
 import Message from './Message';
-import styled from 'styled-components';
+import styled from './node_modules/styled-components';
 
 const WelcomeText = styled.h2`
     color: #2AB7A8;

@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { connect } from "react-redux";
+import React from "./node_modules/react";
+import styled from "./node_modules/styled-components";
+import { connect } from "./node_modules/react-redux";
 import { signup } from "../actions";
 
 import { BlueText, FormInput, Button } from "../styles/shared";

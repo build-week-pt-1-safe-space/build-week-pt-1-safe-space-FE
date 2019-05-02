@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from './node_modules/react';
+import styled from './node_modules/styled-components';
 
 const FooterContainer = styled.div`
     border-top: 4px solid #2AB7A8;

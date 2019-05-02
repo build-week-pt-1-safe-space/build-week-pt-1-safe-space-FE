@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from './node_modules/react';
+import styled from './node_modules/styled-components';
 import logo from '../assets/logo.png';
 import search from '../assets/search.jpg';
-import {NavLink} from 'react-router-dom';
+import {NavLink} from './node_modules/react-router-dom';
 import '../styles/nav.css';
 
 const NavBar = styled.div`

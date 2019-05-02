@@ -15,6 +15,10 @@ const LoginContainer = styled.div`
   margin: 70px auto 0 auto;
   color: #47525e;
   padding-bottom: 20px;
+
+  @media(max-width: 500px){
+    width: 90%;
+  }
 `;
 
 const SignIn = styled.h2`

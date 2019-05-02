@@ -46,6 +46,10 @@ const SearchIcon = styled.img`
     height: 18px;
     padding-right: 100px;
     padding-top: 2px;
+
+    @media(max-width:500px){
+        padding-right: 10px;
+    }
 `
 
 const Nav = props => {

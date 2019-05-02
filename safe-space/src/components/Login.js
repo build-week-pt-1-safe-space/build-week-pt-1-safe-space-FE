@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from "./node_modules/react";
+import styled from "./node_modules/styled-components";
+import { Link } from "./node_modules/react-router-dom";
+import { connect } from "./node_modules/react-redux";
 import { login } from "../actions";
 
 import "../styles/shared";
@@ -51,6 +51,12 @@ class Login extends React.Component {
     password: "",
     isLoading: false
   };
+
+  componentDidUpdate() {
+    if (this.props.isLoggedIn) {
+      this.props.history.push("/dashboard");
+    }
+  }
 
   handleChanges = e => {
     this.setState({ [e.target.name]: e.target.value });

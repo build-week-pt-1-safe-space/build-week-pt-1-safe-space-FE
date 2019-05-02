@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { signup } from "../Actions";
+import { signup } from "../actions";
 
 import { BlueText, FormInput, Button } from "../styles/shared";
 
@@ -114,7 +114,7 @@ class SignUp extends React.Component {
               type="password"
             />
           </FormContainer>
-          <Button>Sign Up</Button>
+          <Button type="submit">Sign Up</Button>
         </SignUpForm>
       </SignUpContainer>
     );

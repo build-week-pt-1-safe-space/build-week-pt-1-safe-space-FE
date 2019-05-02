@@ -1,4 +1,4 @@
-import React from "./node_modules/react";
+import React from "react";
 import Message from "./Message";
 import styled from "styled-components";
 
@@ -23,6 +23,12 @@ const NewMessage = styled.button`
   margin: 0 auto 25px auto;
   display: block;
   cursor: pointer;
+
+  @media (max-width: 500px) {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+  }
 `;
 
 const MessagesContainer = styled.div`
@@ -32,6 +38,11 @@ const MessagesContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   padding: 20px 0;
+  @media (max-width: 500px) {
+    width: 90%;
+    padding: 10px 0;
+    border-radius: 50px;
+  }
 `;
 
 class Dashboard extends React.Component {

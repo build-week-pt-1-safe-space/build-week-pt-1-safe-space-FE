@@ -15,6 +15,11 @@ const MainHeading = styled.h1`
   font-size: 50px;
   padding-top: 20px;
   text-align: center;
+
+  @media (max-width: 500px) {
+    font-size: 40px;
+    padding-top: 10px;
+  }
 `;
 
 const SecondHeading = styled.h3`
@@ -31,13 +36,27 @@ const SignUpForm = styled.form`
   margin: 10px auto;
   background-color: #2ab7a8;
   width: 60%;
-  height: 300px;
+  padding-bottom: 25px;
+
+  @media (max-width: 800px) {
+    padding-bottom: 35px;
+    width: 70%;
+  }
+
+  @media (max-width: 500px) {
+    width: 80%;
+  }
 `;
 
 const FormHeading = styled.h2`
   font-size: 35px;
   text-align: center;
   padding-top: 30px;
+
+  @media (max-width: 800px) {
+    padding-top: 20px;
+    font-size: 30px;
+  }
 `;
 
 const FormContainer = styled.div`

@@ -1,8 +1,8 @@
-import React from "./node_modules/react";
-import styled from "./node_modules/styled-components";
+import React from "react";
+import styled from "styled-components";
 import logo from "../assets/logo.png";
 import search from "../assets/search.jpg";
-import { NavLink } from "./node_modules/react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/nav.css";
 
 const NavBar = styled.div`
@@ -22,17 +22,30 @@ const NavItems = styled.ul`
   align-items: center;
   font-size: 18px;
   padding-top: 15px;
+  @media (max-width: 800px) {
+    width: 60%;
+  }
+  @media (max-width: 500px) {
+    width: 80%;
+  }
 `;
 
 const Logo = styled.img`
   height: 60px;
   padding-left: 20px;
+  @media (max-width: 500px) {
+    height: 50px;
+    padding-left: 10px;
+  }
 `;
 
 const SearchIcon = styled.img`
   height: 18px;
   padding-right: 100px;
   padding-top: 2px;
+  @media (max-width: 500px) {
+    padding-right: 10px;
+  }
 `;
 
 const Nav = props => {

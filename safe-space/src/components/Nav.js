@@ -48,7 +48,7 @@ const Nav = props => {
         <NavBar>
             <Logo src={logo} />
             <NavItems className="navbar">
-                <li activeClassName="active">Home</li>
+                <li activeClassName="active"><NavLink exact to="/">Home</NavLink></li>
                 {NavToggle}
                 <li><SearchIcon src={search} /></li>
             </NavItems>

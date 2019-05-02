@@ -15,8 +15,7 @@ const LoginContainer = styled.div`
   margin: 70px auto 0 auto;
   color: #47525e;
   padding-bottom: 20px;
-
-  @media(max-width: 500px){
+  @media (max-width: 500px) {
     width: 90%;
   }
 `;
@@ -96,7 +95,6 @@ class Login extends React.Component {
     );
   }
 }
-
 const mapStateToProps = state => {
   return {
     users: state.users,
@@ -105,7 +103,6 @@ const mapStateToProps = state => {
     isLoggedIn: state.isLoggedIn
   };
 };
-
 export default connect(
   mapStateToProps,
   { login }

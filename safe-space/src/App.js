@@ -15,7 +15,7 @@ class App extends React.Component {
     <div className="App">
       <Nav isLoggedIn={this.props.isLoggedIn}/>
       <Route exact path='/' render={props =>(
-          this.props.loggedIn === true 
+          this.props.isLoggedIn === true 
           ? <Dashboard {...props}/>
           : <LoginView {...props}/>
         )} />

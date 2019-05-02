@@ -22,11 +22,24 @@ const NavItems = styled.ul`
     align-items: center;
     font-size: 18px;
     padding-top: 15px;
+
+    @media(max-width: 800px){
+        width: 60%;
+    }
+
+    @media(max-width: 500px){
+        width: 80%;
+    }
 `
 
 const Logo = styled.img `
     height: 60px;
     padding-left: 20px;
+
+    @media(max-width: 500px){
+        height: 50px;
+        padding-left: 10px;
+    }
 `
 
 const SearchIcon = styled.img`

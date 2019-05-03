@@ -55,12 +55,6 @@ class Login extends React.Component {
     isLoading: false
   };
 
-  componentDidUpdate() {
-    if (this.props.isLoggedIn) {
-      this.props.history.push("/dashboard");
-    }
-  }
-
   handleChanges = e => {
     this.setState({ [e.target.name]: e.target.value });
   };

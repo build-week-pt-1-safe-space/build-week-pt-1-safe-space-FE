@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../actions';
 
@@ -62,6 +62,7 @@ class Login extends React.Component {
 	login = e => {
 		e.preventDefault();
 		this.props.login(this.state);
+		this.props.history.push('/dashboard');
 	};
 
 	render() {
@@ -103,7 +104,9 @@ const mapStateToProps = state => {
 		isLoggedIn: state.isLoggedIn,
 	};
 };
-export default connect(
-	mapStateToProps,
-	{ login },
-)(Login);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		{ login },
+	)(Login),
+);

@@ -24,7 +24,7 @@ const initialState = {
 	isLoggedIn: false,
 	isLoading: false,
 	userid: '',
-	token: localStorage.getItem('token'),
+	token: null,
 	messages: [],
 	error: '',
 };
@@ -42,7 +42,7 @@ const rootReducer = (state = initialState, action) => {
 				...state,
 				isLoggedIn: true,
 				isLoading: false,
-				name: action.payload.name,
+				name: action.payload.message,
 				token: action.payload.token,
 				userid: action.payload.id,
 				error: '',

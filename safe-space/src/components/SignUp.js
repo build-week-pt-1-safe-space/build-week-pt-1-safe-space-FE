@@ -90,6 +90,7 @@ class SignUp extends React.Component {
 	};
 
 	render() {
+		console.log(this.props);
 		return (
 			<SignUpContainer>
 				<MainHeading>
@@ -101,9 +102,9 @@ class SignUp extends React.Component {
 				<ThirdHeading>
 					Your new <BlueText>Journey</BlueText> begins here.
 				</ThirdHeading>
-				<SignUpForm>
+				<SignUpForm onSubmit={this.signup}>
 					<FormHeading>Getting Better Begins Now</FormHeading>
-					<FormContainer onSubmit={this.signup}>
+					<FormContainer>
 						<FormInput
 							onChange={this.handleChanges}
 							value={this.state.name}

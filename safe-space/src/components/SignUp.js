@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { signup } from '../actions';
+import { withRouter } from 'react-router-dom';
 
 import { BlueText, FormInput, Button } from '../styles/shared';
 
@@ -87,10 +88,10 @@ class SignUp extends React.Component {
 			email: this.state.email,
 			password: this.state.password,
 		});
+		this.props.history.push('/');
 	};
 
 	render() {
-		console.log(this.props);
 		return (
 			<SignUpContainer>
 				<MainHeading>
@@ -151,7 +152,9 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(
-	mapStateToProps,
-	{ signup },
-)(SignUp);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		{ signup },
+	)(SignUp),
+);

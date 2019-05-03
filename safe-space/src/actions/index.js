@@ -1,4 +1,4 @@
-import axios from "./node_modules/axios";
+import axios from "axios";
 
 export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";

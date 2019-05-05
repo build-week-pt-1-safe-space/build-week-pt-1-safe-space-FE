@@ -1,6 +1,7 @@
 import React from 'react';
 import Message from './Message';
 import styled from 'styled-components';
+import {connect} from 'react-redux';
 
 const WelcomeText = styled.h2`
 	color: #2ab7a8;
@@ -49,7 +50,7 @@ class Dashboard extends React.Component {
 	render() {
 		return (
 			<div>
-				<WelcomeText>Welcome User!</WelcomeText>
+				<WelcomeText>{this.props.name}!</WelcomeText>
 				<NewMessage>Add New Message</NewMessage>
 				<MessagesContainer>
 					<Message />
@@ -59,4 +60,10 @@ class Dashboard extends React.Component {
 	}
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+    return{
+        name: state.name
+    }
+}
+
+export default connect(mapStateToProps, {})(Dashboard);

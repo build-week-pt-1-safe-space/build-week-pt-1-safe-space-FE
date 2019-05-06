@@ -8,9 +8,12 @@ import { connect } from "react-redux";
 import Dashboard from "./components/Dashboard";
 
 import "./App.css";
+
 import MessageForm from "./components/MessageForm";
 
 class App extends React.Component {
+  componentDidMount() {}
+
   render() {
     return (
       <div className="App">

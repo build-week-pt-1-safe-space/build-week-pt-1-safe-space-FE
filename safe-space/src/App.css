@@ -3,6 +3,55 @@
 }
 
 html {
-    background-color: #593FC4;
+    background-image: linear-gradient(rgba(42, 183, 168, 0.64), #9470d5, #5f65e9);
+    height: 100%;
+    
 }
 
+form{
+    width: 500px;
+    padding: 30px;
+    background-image: linear-gradient(rgba(42, 183, 168, 0.64), #9470d5, #5f65e9);
+    margin: 50px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+}
+.formButton {
+        background:#593FC4;
+        color:#fff;
+        border:none;
+        position:relative;
+        height:60px;
+        font-size:1.6em;
+        padding:0 2em;
+        cursor:pointer;
+        transition:800ms ease all;
+        outline:none;
+      }
+      button:hover{
+        background:#2ab7a8;
+        color:white;
+      }
+      button:before,button:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: #2ab7a8;
+        transition:400ms ease all;
+      }
+      button:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+      }
+      button:hover:before,button:hover:after{
+        width:100%;
+        transition:800ms ease all;
+      }
+
+      

@@ -59,19 +59,11 @@ class Login extends React.Component {
 		this.setState({ [e.target.name]: e.target.value });
 	};
 
-<<<<<<< HEAD
-	login = e => {
-		e.preventDefault();
-		this.props.login(this.state);
-		this.props.history.push('/');
-	};
-=======
   login = e => {
     e.preventDefault();
     this.props.login(this.state);
     this.props.history.push("/");
   };
->>>>>>> 41054b5e0f4f867b2d3c8fde08f7e380668253d2
 
 	render() {
 		return (

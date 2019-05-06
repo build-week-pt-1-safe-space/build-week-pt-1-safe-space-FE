@@ -59,13 +59,14 @@ class Message extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <MessageContainer>
         <IconContainer>
           <Icon src={Delete} alt="delete message" />
           <Icon src={Edit} alt="edit message" />
         </IconContainer>
-        <MessageText>{this.props.message}</MessageText>
+        <MessageText>{this.props.message.body}</MessageText>
       </MessageContainer>
     );
   }

@@ -9,4 +9,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(rgba(42, 183, 168, 0.64), #9470d5, #5f65e9);
+}
+
+.inUse {
+  display: none;
+}
+
+.hidden {
+  display: none;
 }

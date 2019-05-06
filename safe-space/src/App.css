@@ -3,7 +3,9 @@
 }
 
 html {
-    background-color: #593FC4;
+    background-image: linear-gradient(rgba(42, 183, 168, 0.64), #9470d5, #5f65e9);
+    height: 100%;
+    
 }
 
 form{

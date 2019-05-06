@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BlueText = styled.span`
-  color: #2ab7a8;
+  color: #9470d5;
 `;
 
 export const FormInput = styled.input`

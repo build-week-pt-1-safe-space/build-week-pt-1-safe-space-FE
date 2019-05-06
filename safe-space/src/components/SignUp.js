@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { signup } from "../actions";
+import { signup } from "../actions/userActions";
+
 import { withRouter } from "react-router-dom";
 
 import { BlueText, FormInput, Button } from "../styles/shared";

@@ -105,7 +105,7 @@ class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    messages: state.messages,
+    messages: state.messageReducer.messages,
     error: state.error,
     id: state.id,
     token: state.token,

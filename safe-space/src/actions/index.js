@@ -1,54 +1,44 @@
 import axios from "axios";
 
-export const SIGNUP_START = "SIGNUP_START";
-export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
-export const SIGNUP_FAIL = "SIGNUP_FAIL";
+// export const SIGNUP_START = "SIGNUP_START";
+// export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
+// export const SIGNUP_FAIL = "SIGNUP_FAIL";
 
-axios.defaults.baseURL = "https://safe-space-backend.herokuapp.com/api";
+// export const signup = creds => dispatch => {
+//   console.log(creds);
+//   const user = {
+//     first_name: creds.name,
+//     last_name: creds.name,
+//     email: creds.email,
+//     password: creds.password,
+//     phone: creds.phoneNumber
+//   };
+//   dispatch({ type: SIGNUP_START });
+//   axios
+//     .post(`https://safe-space-backend.herokuapp.com/api/register`, user)
+//     .then(res => {
+//       localStorage.setItem("token", res.data.token);
+//       dispatch({ type: SIGNUP_SUCCESS, payload: res.data.payload });
+//       console.log("response", res);
+//     })
+//     .catch(err => {
+//       dispatch({ type: SIGNUP_FAIL, payload: err });
+//     });
+// };
 
-axios.interceptors.request.use(
-  function(options) {
-    options.headers.authorization = localStorage.getItem("token");
-    return;
-  },
-  function(error) {
-    return Promise.reject(error);
-  }
-);
+// export const LOGIN_START = "LOGIN_START";
+// export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+// export const LOGIN_FAIL = "LOGIN_FAIL";
 
-export const signup = creds => dispatch => {
-  console.log(creds);
-  const user = {
-    first_name: creds.name,
-    last_name: creds.name,
-    email: creds.email,
-    password: creds.password,
-    phone: creds.phoneNumber
-  };
-  dispatch({ type: SIGNUP_START });
-  axios
-    .post(`/register`, user)
-    .then(res => {
-      localStorage.setItem("token", res.data.token);
-      dispatch({ type: SIGNUP_SUCCESS, payload: res.data.payload });
-      console.log("response", res);
-    })
-    .catch(err => {
-      dispatch({ type: SIGNUP_FAIL, payload: err });
-    });
-};
-
-export const LOGIN_START = "LOGIN_START";
-export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-export const LOGIN_FAIL = "LOGIN_FAIL";
-
-export const login = creds => dispatch => {
-  dispatch({ type: LOGIN_START });
-  axios.post(`/login`, creds).then(res => {
-    localStorage.setItem("token", res.data.token);
-    dispatch({ type: LOGIN_SUCCESS, payload: res.data });
-  });
-};
+// export const login = creds => dispatch => {
+//   dispatch({ type: LOGIN_START });
+//   axios
+//     .post(`https://safe-space-backend.herokuapp.com/api/login`, creds)
+//     .then(res => {
+//       localStorage.setItem("token", res.data.token);
+//       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+//     });
+// };
 
 export const FETCHING_START = "FETCHING_START";
 export const FETCHING_SUCCESS = "FETCHING_SUCCESS";
@@ -57,7 +47,10 @@ export const FETCHING_FAIL = "FETCHING_FAIL";
 export const fetchMessages = (userid, creds) => dispatch => {
   dispatch({ type: FETCHING_START });
   axios
-    .get(`/messages/${userid}`, creds)
+    .get(
+      `https://safe-space-backend.herokuapp.com/api/messages/${userid}`,
+      creds
+    )
     .then(res => dispatch({ type: FETCHING_SUCCESS, payload: res.data }))
     .catch(err => dispatch({ type: FETCHING_FAIL, payload: err }));
 };
@@ -70,8 +63,10 @@ export const addMessage = creds => dispatch => {
   console.log(creds);
   dispatch({ type: ADDING_START });
   axios
-    .post(`/messages`, creds)
-    .then(res => dispatch({ type: ADDED_SUCCESS, payload: res.data }))
+    .post(`https://safe-space-backend.herokuapp.com/api/messages`, creds, {
+      headers: { Authorization: localStorage.getItem("token") }
+    })
+    .then(res => dispatch({ type: ADDED_SUCCESS, payload: res.data[0] }))
     .catch(err => dispatch({ type: ADDING_FAIL, payload: err }));
 };
 
@@ -79,12 +74,12 @@ export const UPDATING_START = "UPDATE_START";
 export const UPDATED_SUCCESS = "UPDATED_SUCCESS";
 export const UPDATING_FAIL = "UPDATING_FAIL";
 
-export const updateMessage = (userid, creds) => dispatch => {
+export const updateMessage = (userid, messageid) => dispatch => {
   dispatch({ type: UPDATING_START });
   axios
-    .put(`/users/${userid}/messages`, creds)
+    .put(`/messages/${messageid}`, messageid)
     .then(res => dispatch({ type: UPDATED_SUCCESS, payload: res.data }))
-    .then(() => fetchMessages(creds, userid)(dispatch))
+    .then(() => fetchMessages(messageid, userid)(dispatch))
     .catch(err => dispatch({ type: UPDATING_FAIL, payload: err }));
 };
 
@@ -95,7 +90,7 @@ export const DELETING_FAIL = "DELETING_FAIL";
 export const deleteMessage = (userid, creds) => dispatch => {
   dispatch({ type: DELETING_START });
   axios
-    .delete(`/users/${userid}/messages/${creds.id}`, creds)
+    .delete(`/messages/${creds.id}`, creds)
     .then(res => dispatch({ type: DELETED_SUCCESS, payload: res.data }))
     .then(() => fetchMessages(creds, userid)(dispatch))
     .catch(err => dispatch({ type: UPDATING_FAIL, payload: err }));

@@ -39,15 +39,51 @@ const MessageText = styled.div`
 	}
 `;
 
+const MessageTextInput = styled.input`
+	background-color: #13ce66;
+	width: 90%;
+	min-height: 95px;
+	margin-left: 20px;
+	font-size: 25px;
+	padding: 10px;
+	border: none;
+
+	@media (max-width: 500px) {
+		margin-left: 10px;
+		min-height: 75px;
+		font-size: 18px;
+	}
+`;
+
+const EditForm = styled.form`
+	min-width: 100%;
+`
+
 class Message extends React.Component {
+
+	state={
+		editing: false,
+		message: "test message"
+	}
+
+	handleChanges = e => {
+		this.setState({ [e.target.name]: e.target.value });
+	};
+
+	toggleEdit = e => {
+		this.setState({editing: !this.state.editing})
+	}
+
 	render() {
 		return (
 			<MessageContainer>
 				<IconContainer>
 					<Icon src={Delete} alt="delete message" />
-					<Icon src={Edit} alt="edit message" />
+					<Icon src={Edit} alt="edit message" onClick={this.toggleEdit} />
 				</IconContainer>
-				<MessageText>This is a message.</MessageText>
+				{this.state.editing ? <EditForm onSubmit={this.toggleEdit}><MessageTextInput value={this.state.message} name="message" onChange={this.handleChanges}/></EditForm> : <MessageText>{this.state.message}</MessageText>}
+				
+				
 			</MessageContainer>
 		);
 	}

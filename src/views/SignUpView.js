@@ -1,5 +1,5 @@
 import React from "react";
-import SignUp from "../components/SignUp";
+import SignUp from "../Components/SignUp";
 
 const SignUpView = props => {
   return <SignUp />;

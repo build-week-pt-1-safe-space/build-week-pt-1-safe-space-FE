@@ -1,15 +1,15 @@
 import React from "react";
-import Nav from "./components/Nav";
+import Nav from "./Components/Nav";
 import SignUpView from "./views/SignUpView";
 import LoginView from "./views/LoginView";
-import Footer from "./components/Footer";
+import Footer from "./Components/Footer";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./Components/Dashboard";
 
 import "./App.css";
 
-import MessageForm from "./components/MessageForm";
+import MessageForm from "./Components/MessageForm";
 
 class App extends React.Component {
   componentDidMount() {}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
 	LOGIN_START,
 	LOGIN_SUCCESS,
@@ -151,3 +152,13 @@ const rootReducer = (state = initialState, action) => {
 	}
 };
 export default rootReducer;
+=======
+import { combineReducers } from "redux";
+import userReducer from "./userReducer";
+import messageReducer from "./messageReducer";
+
+export default combineReducers({
+  userReducer,
+  messageReducer
+});
+>>>>>>> 80b7e6a3e8f918bc9c02f3b15be59fe68c3ea78e

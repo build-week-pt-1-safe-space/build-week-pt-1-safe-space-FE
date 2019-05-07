@@ -19,17 +19,22 @@ class MessageForm extends Component {
   //     });
   //   };
 
-  componentDidMount() {
-    this.setState({
-      message: {
-        user_id: this.props.userId
-      }
-    });
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     message: {
+  //       user_id: this.props.userId
+  //     }
+  //   });
+  // }
 
   handleAddMessage = e => {
     e.preventDefault();
-    this.props.addMessage(this.state.message);
+    let newMessage = {
+      body: this.state.message.body,
+      user_id: this.props.userId
+    };
+    console.log(newMessage);
+    this.props.addMessage(newMessage);
     this.setState({
       message: ""
     });
@@ -68,10 +73,7 @@ class MessageForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    userId: state.userId,
-    token: state.serverToken,
-    isLoading: state.isLoading,
-    error: state.error
+    userId: state.userReducer.user.user_id
   };
 };
 

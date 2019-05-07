@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { login } from '../actions';
+import React from "react";
+import styled from "styled-components";
+import { Link, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { login } from "../actions/userActions";
 
 import '../styles/shared';
 
@@ -62,7 +62,7 @@ class Login extends React.Component {
   login = e => {
     e.preventDefault();
     this.props.login(this.state);
-    this.props.history.push("/");
+    this.props.history.push("/dashboard");
   };
 
 	render() {

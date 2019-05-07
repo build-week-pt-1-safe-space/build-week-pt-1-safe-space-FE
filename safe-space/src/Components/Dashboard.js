@@ -61,9 +61,13 @@ class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return{
-        name: state.name
-    }
-}
+  return {
+    messages: state.messageReducer.messages,
+    error: state.error,
+    id: state.id,
+    token: state.token,
+    name: state.name
+  };
+};
 
 export default connect(mapStateToProps, {})(Dashboard);

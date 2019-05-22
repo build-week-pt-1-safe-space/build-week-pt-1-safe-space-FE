@@ -1,0 +1,8 @@
+.navbar > li > a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar > li > a.active {
+    color: #9470d5;
+  }

@@ -73,11 +73,8 @@ class MessageForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    userId: state.userReducer.user.user_id
+    user_id: state.userReducer.user_id
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { addMessage }
-)(MessageForm);
+export default connect(mapStateToProps, { addMessage })(MessageForm);

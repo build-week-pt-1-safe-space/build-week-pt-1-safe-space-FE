@@ -43,11 +43,12 @@ import axios from 'axios';
 export const FETCHING_START = 'FETCHING_START';
 export const FETCHING_SUCCESS = 'FETCHING_SUCCESS';
 export const FETCHING_FAIL = 'FETCHING_FAIL';
+export const baseURL='https://safe-space-api.herokuapp.com'
 
 export const fetchMessages = userid => dispatch => {
 	dispatch({ type: FETCHING_START });
 	axios
-		.get(`https://safe-space-backend.herokuapp.com/api/messages/${userid}`, {
+		.get(`${baseURL}/api/messages/${userid}`, {
 			headers: { Authorization: localStorage.getItem('token') },
 		})
 		.then(res => dispatch({ type: FETCHING_SUCCESS, payload: res.data }))
@@ -62,7 +63,7 @@ export const addMessage = creds => dispatch => {
 	console.log(creds);
 	dispatch({ type: ADDING_START });
 	axios
-		.post(`https://safe-space-backend.herokuapp.com/api/messages`, creds, {
+		.post(`${baseURL}/api/messages`, creds, {
 			headers: { Authorization: localStorage.getItem('token') },
 		})
 		.then(res => dispatch({ type: ADDED_SUCCESS, payload: res.data[0] }))
@@ -78,7 +79,7 @@ export const updateMessage = message => dispatch => {
 	dispatch({ type: UPDATING_START });
 	axios
 		.put(
-			`https://safe-space-backend.herokuapp.com/api/messages/${message.id}`,
+			`${baseURL}/api/messages/${message.id}`,
 			message,
 			{
 				headers: { Authorization: localStorage.getItem('token') },
@@ -95,7 +96,7 @@ export const DELETING_FAIL = 'DELETING_FAIL';
 export const deleteMessage = id => dispatch => {
 	dispatch({ type: DELETING_START });
 	axios
-		.delete(`https://safe-space-backend.herokuapp.com/api/messages/${id}`, {
+		.delete(`${baseURL}/api/messages/${id}`, {
 			headers: { Authorization: localStorage.getItem('token') },
 		})
 		.then(res => dispatch({ type: DELETED_SUCCESS, payload: res.data }))

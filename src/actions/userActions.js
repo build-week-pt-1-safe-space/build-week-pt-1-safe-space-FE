@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import baseURL from './index';
+import {baseURL} from './index';
 
 export const SIGNUP_START = 'SIGNUP_START';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
@@ -16,7 +16,7 @@ export const signup = creds => dispatch => {
 	};
 	dispatch({ type: SIGNUP_START });
 	axios
-		.post(`${baseURL}/api/register`, user)
+		.post(`${baseURL}/api/auth/register`, user)
 		.then(res => {
 			localStorage.setItem('token', res.data.token);
 			dispatch({ type: SIGNUP_SUCCESS, payload: res.data.payload });
@@ -34,7 +34,7 @@ export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const login = creds => dispatch => {
 	dispatch({ type: LOGIN_START });
 	axios
-		.post(`${baseURL}/api/login`, creds)
+		.post(`${baseURL}/api/auth/login`, creds)
 		.then(res => {
 			localStorage.setItem('token', res.data.token);
 			dispatch({ type: LOGIN_SUCCESS, payload: res.data });
